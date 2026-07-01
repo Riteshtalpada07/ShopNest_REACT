@@ -30,6 +30,25 @@ console.log(user.id);
     fetchCart();
   }, []);
 
+
+  const removeProduct = async (productId) => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    await axios.delete(
+      `/api/card/${user.id}/${productId}`
+    );
+
+    setProducts((prevProducts) =>
+      prevProducts.filter(
+        (item) => item.product._id !== productId
+      )
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
   const totalItems = products.reduce(
     (total, item) => total + item.quantity,
     0
@@ -86,9 +105,12 @@ const totalCost = products.reduce(
                   ₹{item.product.price.toLocaleString("en-IN")}
                 </span>
 
-                <button className="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                  Remove
-                </button>
+               <button
+                onClick={() => removeProduct(item.product._id)}
+                className="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+              >
+                Remove
+              </button>
               </div>
             </div>
           </div>

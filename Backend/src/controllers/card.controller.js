@@ -75,3 +75,35 @@ export async function getCartData(req, res) {
         });
     }
 }
+
+export async function removeCartProduct(req, res) {
+    try {
+        const { userId, productId } = req.params;
+
+        const cart = await CardModel.findOne({ userId });
+
+        if (!cart) {
+            return res.status(404).json({
+                success: false,
+                message: "Cart not found",
+            });
+        }
+
+        cart.products = cart.products.filter(
+            (item) => item.product.toString() !== productId
+        );
+
+        await cart.save();
+
+        res.status(200).json({
+            success: true,
+            message: "Product removed successfully",
+            cart,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+    }
+}

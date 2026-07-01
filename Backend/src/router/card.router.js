@@ -8,5 +8,7 @@ route.post("/add",isAuthenticated,CardController.addToCard);4
 
 route.get("/:id",isAuthenticated,CardController.getCartData)
 
+route.delete("/:userId/:productId",CardController.removeCartProduct);
+
 
 export default route;
