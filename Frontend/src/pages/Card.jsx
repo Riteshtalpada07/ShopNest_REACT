@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const Card = () => {
   const [products, setProducts] = useState([]);
@@ -48,6 +48,7 @@ console.log(user.id);
     toast.success("Product removed from cart");
   } catch (error) {
     console.log(error);
+    toast.error("Failed to remove product from cart");
   }
 };
 
