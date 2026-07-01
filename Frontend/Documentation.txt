@@ -1,0 +1,125 @@
+backend/
+│
+├── src/
+│   │
+│   ├── config/
+│   │   ├── config.js
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   ├── user.controller.js
+│   │   ├── category.controller.js
+│   │   ├── product.controller.js
+│   │   ├── cart.controller.js
+│   │   ├── wishlist.controller.js
+│   │   ├── order.controller.js
+│   │   └── payment.controller.js
+│   │
+│   ├── middlewares/
+│   │   ├── auth.middleware.js
+│   │   ├── admin.middleware.js
+│   │   └── error.middleware.js
+│   │
+│   ├── models/
+│   │   ├── user.model.js
+│   │   ├── category.model.js
+│   │   ├── product.model.js
+│   │   ├── cart.model.js
+│   │   ├── wishlist.model.js
+│   │   ├── order.model.js
+│   │   ├── review.model.js
+│   │   └── coupon.model.js
+│   │
+│   ├── routes/
+│   │   ├── auth.router.js
+│   │   ├── user.router.js
+│   │   ├── category.router.js
+│   │   ├── product.router.js
+│   │   ├── cart.router.js
+│   │   ├── wishlist.router.js
+│   │   ├── order.router.js
+│   │   └── payment.router.js
+│   │
+│   ├── services/
+│   │   ├── auth.service.js
+│   │   ├── cloudinary.service.js
+│   │   └── payment.service.js
+│   │
+│   ├── utils/
+│   │   ├── generateToken.js
+│   │   ├── hashPassword.js
+│   │   └── response.js
+│   │
+│   └── app.js
+│
+├── .env
+├── .gitignore
+├── package.json
+└── server.js
+
+
+frontend/
+│
+├── src/
+│   │
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── CategoryCard.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── Loader.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Products.jsx
+│   │   ├── ProductDetails.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Wishlist.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Orders.jsx
+│   │   └── Checkout.jsx
+│   │
+│   ├── admin/
+│   │   ├── Dashboard.jsx
+│   │   ├── Products.jsx
+│   │   ├── Categories.jsx
+│   │   ├── Orders.jsx
+│   │   └── Users.jsx
+│   │
+│   ├── layouts/
+│   │   ├── MainLayout.jsx
+│   │   └── AdminLayout.jsx
+│   │
+│   ├── api/
+│   │   ├── axios.js
+│   │   ├── auth.api.js
+│   │   ├── product.api.js
+│   │   ├── category.api.js
+│   │   └── order.api.js
+│   │
+│   ├── context/
+│   │
+│   ├── redux/
+│   │   ├── store.js
+│   │   └── slices/
+│   │
+│   ├── routes/
+│   │   ├── AppRoutes.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   └── AdminRoute.jsx
+│   │
+│   ├── hooks/
+│   │
+│   ├── utils/
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── vite.config.js
