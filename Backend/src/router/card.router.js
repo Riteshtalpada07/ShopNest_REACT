@@ -4,7 +4,7 @@ import * as CardController from '../controllers/card.controller.js'
 
 const route = Router();
 
-route.post("/add",isAuthenticated,CardController.addToCard);4
+route.post("/add",isAuthenticated,CardController.addToCard);
 
 route.get("/:id",isAuthenticated,CardController.getCartData)
 

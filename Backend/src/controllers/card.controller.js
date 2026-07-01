@@ -80,7 +80,9 @@ export async function removeCartProduct(req, res) {
     try {
         const { userId, productId } = req.params;
 
-        const cart = await CardModel.findOne({ userId });
+        const cart = await CardModel.findOne({
+            user: userId,
+        });
 
         if (!cart) {
             return res.status(404).json({
