@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const Card = () => {
   const [products, setProducts] = useState([]);
@@ -44,6 +45,7 @@ console.log(user.id);
         (item) => item.product._id !== productId
       )
     );
+    toast.success("Product removed from cart");
   } catch (error) {
     console.log(error);
   }
